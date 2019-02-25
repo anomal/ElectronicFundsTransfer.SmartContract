@@ -3,4 +3,8 @@ This a proof-of-concept of an electronic funds transfer (EFT) smart contract for
 
 ## Background
 
-When a client pays a bill or sends money from one bank to another, it takes 2-5 days to process. This is because money is not sent in real-time, but transactions relative to another financial institution (FI) are summed and processed as a batch at the end of the day. A EFT smart contract solves this problem by sharing a ledger between all concerned FIs--a consortium blockchain. Any FI that is part of the consortium and enters into the smart contract has the EFT transaction on the shared ledger and does not require a third party to clear and settle the transactions.
+When a client pays a bill or sends money from one bank to another, it takes 2-5 days to process. This is because money is not sent in real-time, but transactions relative to another financial institution (FI) are summed and processed as a batch at the end of the day. A EFT smart contract solves this problem by sharing a ledger between all concerned FIs--a consortium blockchain. Any FI that is part of the consortium and enters into the smart contract sends the EFT transaction on the shared ledger in real-time and does not require a third party to clear and settle the inter-bank transactions.
+
+## Smart Contract in Solidity
+
+The smart contract was not designed to use Ethereum's cryptocurrency (ETH) or to link Canadian Dollars (CAD) to ETH. We make use of only the shared ledger that records the inter-bank transactions and the ability of FIs to consent to a deposit or withdrawal on behalf of the customer's bank account to the other FI's customer's bank account.
