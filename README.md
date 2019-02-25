@@ -12,8 +12,8 @@ The smart contract was *not* designed to use Ethereum's cryptocurrency (ETH), or
 ### 1. Request transfer
 
 Bank A executes `requestTransfer` with a chosen `correlationId`, `fromAccount` = 12345 (bank account number at Bank A), `address` = <blockchain address of Bank B>, `toAccount` = 98765 (bank account number at Bank B), `amount` = 1000 (CAD), and `transactionType` = `Deposit`. The function generates a `transferID` by hashing the combination of the blockchain address of Bank A, the blockchain address of Bank B, bank account 12345 at Bank A, bank account 98765 at Bank B, the amount, the timestamp of the blockchain transaction, and the correlationId.
-```  
-bytes32 transferId = sha256(msg.sender, to, fromAccount, toAccount, amount, now, correlationId);
+```
+        bytes32 transferId = sha256(msg.sender, to, fromAccount, toAccount, amount, now, correlationId);
 ```
 Hashing is used to simulate a universally-unique identifier (UUID). The transferId (key) and Transfer object (value) are initialized on the mapping (hash table) `transfers`. Here is the `Transfer` structure: 
   
