@@ -29,4 +29,4 @@ Hashing is used to simulate a universally-unique identifier (UUID). The transfer
         uint timestamp;
     }
 ```
-The values are populated and the transfer's `State` is set to `Initiated`. A `TransferRequested` event is recorded on the blockchain with Bank A's blockhain address, Bank B's blockchain address, the correlation ID, and the transfer ID.
+The values are populated and the transfer's `State` is set to `Initiated`. A `TransferRequested` event is recorded on the blockchain with Bank A's blockchain address, Bank B's blockchain address, the correlation ID, and the transfer ID.
