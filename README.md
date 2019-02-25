@@ -7,4 +7,9 @@ When a client pays a bill or sends money from one bank to another, it takes 2-5 
 
 ## Smart Contract in Solidity
 
-The smart contract was not designed to use Ethereum's cryptocurrency (ETH) or to link Canadian Dollars (CAD) to ETH. We make use of only the shared ledger that records the inter-bank transactions and the ability of FIs to consent to a deposit or withdrawal on behalf of the customer's bank account to the other FI's customer's bank account.
+The smart contract was *not* designed to use Ethereum's cryptocurrency (ETH), or to link Canadian Dollars (CAD) to ETH. We make use of only the shared ledger that records the inter-bank transactions and the ability of FIs to consent in a smart contract to a deposit or withdrawal on behalf of the customer's bank account to the other FI's customer's bank account. Here is an example use case.
+
+1. Bank A executes `requestTransfer` with a chosen `correlationId`, `fromAccount` = 12345 (bank account number at Bank A), `address` = <blockchain address of Bank B>, `toAccount` = 98765 (bank account number at Bank B), `amount` = 1000 (CAD), and `transactionType` = `Deposit`. The function generates a `transferID` by hashing the combination of the blockchain address of Bank A, the blockchain address of Bank B, bank account 12345 at Bank A, bank account 98765 at Bank B, the amount, the current timestamp, and the correlationId.
+```  
+  bytes32 transferId = sha256(msg.sender, to, fromAccount, toAccount, amount, now, correlationId);
+```
