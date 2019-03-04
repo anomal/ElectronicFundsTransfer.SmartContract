@@ -30,3 +30,7 @@ Hashing is used to simulate a universally-unique identifier (UUID). The transfer
     }
 ```
 The values are populated and the transfer's `State` is set to `Initiated`. A `TransferRequested` event is recorded on the blockchain with Bank A's blockchain address, Bank B's blockchain address, the correlation ID, and the transfer ID.
+
+### 2. Get details of transfer request
+
+Bank B can call getters like `getFromAccount(bytes32 transferId) returns (uint)` and `getAmount(bytes32 transferId) returns (uint)` to get details of the transfer request. The getters allow only the sender and receiver to access these confidential details by checking that the blockchain address of the entity requesting the details corresponds to the sender or receiver's blockchain address for the transfer request.
