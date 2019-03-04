@@ -33,4 +33,8 @@ The values are populated and the transfer's `State` is set to `Initiated`. A `Tr
 
 ### 2. Get details of transfer request
 
-Bank B can call getters like `getFromAccount(bytes32 transferId) returns (uint)` and `getAmount(bytes32 transferId) returns (uint)` to get details of the transfer request. The getters allow only the sender and receiver to access these confidential details by checking that the blockchain address of the entity requesting the details corresponds to the sender or receiver's blockchain address for the transfer request.
+Bank B can call getters like `getFromAccount(bytes32 transferId) returns (uint)` and `getAmount(bytes32 transferId) returns (uint)` to get details of the transfer request. The smart contract's getters allow only the sender and receiver to access these confidential details by checking that the blockchain address of the entity requesting the details corresponds to the sender or receiver's blockchain address for the transfer request.
+
+### 3. Confirm transfer
+
+Bank B executes `confirmTransfer` with the `transferId`. The function checks that the blockchain address matches the intended receiver, and changes the `Transfer`'s state to `Confirmed`. A `TransferConfirmed` event is posted on the blockchain, notifying the sender.
