@@ -1,5 +1,5 @@
 # Electronic funds transfer (EFT) smart contract for Ethereum
-This a proof-of-concept of an electronic funds transfer (EFT) smart contract for the [Ethereum](https://github.com/ethereum/wiki/wiki) blockchain written in [Solidity](https://solidity.readthedocs.io/en/latest/index.html), Ethereum's smart contract language. This was created as part of our Canadian Imperial Bank of Commerce (CIBC) ReHacktor hackathon project in 2015. The smart contract was designed and written by myself, with contributions from A. Kozyrev to introduce a correlation ID and additional getters. The hackathon idea of an EFT smart contract is credited to A. Kozyrev.
+This a proof-of-concept of an electronic funds transfer (EFT) smart contract for the [Ethereum](https://github.com/ethereum/wiki/wiki) blockchain written in [Solidity](https://solidity.readthedocs.io/en/latest/index.html), Ethereum's smart contract language. This was created as part of our Canadian Imperial Bank of Commerce (CIBC) ReHacktor hackathon project in 2015 and tested on a private Ethereum blockchain. The smart contract was designed and written by myself, with contributions from A. Kozyrev to introduce a correlation ID and additional getters. The hackathon idea of an EFT smart contract is credited to A. Kozyrev.
 
 ## Background
 
